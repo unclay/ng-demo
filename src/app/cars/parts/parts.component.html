@@ -1,0 +1,45 @@
+<div style="padding: 0 20px;">
+  <ul class="nav nav-tabs" id="myTabs">
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/cars">车辆列表</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" routerLink="/cars/parts">汽配零部件</a>
+    </li>
+  </ul>
+  <!-- Search bar -->
+  <div class="mb-3" style="margin-top: 20px;">
+    <input type="text" class="form-control" placeholder="搜索零部件" [(ngModel)]="searchTerm" (input)="onSearch()">
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">零部件名称</th>
+        <th scope="col">零部件编号</th>
+        <th scope="col">制造商</th>
+        <th scope="col">适用车型</th>
+        <th scope="col">价格</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let part of pagedParts; let i = index">
+        <td>{{ i + 1 + (currentPage - 1) * itemsPerPage }}</td>
+        <td>{{ part.name }}</td>
+        <td>{{ part.partNumber }}</td>
+        <td>{{ part.manufacturer }}</td>
+        <td>{{ part.compatibleModels.join(', ') }}</td>
+        <td>{{ part.price | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <nav aria-label="Page navigation" style="display: flex; flex-direction: row-reverse;">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" [routerLink]="['/cars/parts']" [queryParams]="{ page: page }">{{ page }}</a>
+      </li>
+    </ul>
+  </nav>
+</div>
