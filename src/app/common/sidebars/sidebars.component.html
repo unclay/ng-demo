@@ -1,0 +1,55 @@
+<div class="flex-shrink-0 p-3" style="width: 280px; height: 100vh; border-right: 1px solid #eee;">
+  <a routerLink="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+    <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+    <span class="fs-5 fw-semibold">本田汽车</span>
+  </a>
+  <ul class="list-unstyled ps-0">
+    <li class="mb-1">
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+        车辆管理
+      </button>
+      <div class="collapse show" id="home-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a routerLink="/cars" class="link-body-emphasis d-inline-flex text-decoration-none rounded">车辆列表</a></li>
+          <li><a routerLink="/cars/battery" class="link-body-emphasis d-inline-flex text-decoration-none rounded">电池配置</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-1">
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+        订单管理
+      </button>
+      <div class="collapse" id="dashboard-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a routerLink="/orders" class="link-body-emphasis d-inline-flex text-decoration-none rounded">订单列表</a></li>
+          <li><a routerLink="/pays" class="link-body-emphasis d-inline-flex text-decoration-none rounded">支付管理</a></li>
+          <li><a routerLink="/refund" class="link-body-emphasis d-inline-flex text-decoration-none rounded">退货管理</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-1">
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+        系统设置
+      </button>
+      <div class="collapse" id="orders-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a routerLink="/setting" class="link-body-emphasis d-inline-flex text-decoration-none rounded">基本设置</a></li>
+          <li><a routerLink="/setting/permission" class="link-body-emphasis d-inline-flex text-decoration-none rounded">权限设置</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="border-top my-3"></li>
+    <li class="mb-1">
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+        用户管理
+      </button>
+      <div class="collapse" id="account-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a routerLink="/user" class="link-body-emphasis d-inline-flex text-decoration-none rounded">个人信息</a></li>
+          <li><a routerLink="/user/setting" class="link-body-emphasis d-inline-flex text-decoration-none rounded">用户设置</a></li>
+          <li><a routerLink="/user/logout" class="link-body-emphasis d-inline-flex text-decoration-none rounded">退出</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
